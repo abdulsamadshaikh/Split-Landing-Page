@@ -1,0 +1,158 @@
+/*  
+Project Name: Split Landing Page
+Description:  I have made a minimal split landing page. Give me a thumbs-up, If you like it. Enjoy!
+Author: Abdul Samad
+Author URI: https://getabdulsamad.com/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #333;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  -webkit-display: flex;
+  display: flex;
+}
+
+.split {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 40px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.split h1 {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.split::after {
+  content: '';
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 50%;
+  z-index: -1;
+}
+
+.split p {
+  text-align: center;
+}
+
+.split .btn {
+  border: 0;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.split .btn:hover {
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.split .btn:focus {
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+.split.left {
+  background-image: url('/img/left-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 100%;
+  -ms-flex: 6;
+  flex: 6;
+}
+
+.split.right {
+  background-image: url('/img/right-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 100%;
+  -ms-flex: 6;
+  flex: 6;
+}
+
+.split.hover {
+  max-width: 100%;
+  -ms-flex: 10;
+  flex: 10;
+}
+
+.split.in-active {
+  max-width: 100%;
+  -ms-flex: 2;
+  flex: 2;
+  opacity: 0.3;
+}
+
+.split,
+.split.right,
+.split.left,
+.split::after {
+  transition: all 1000ms ease-in-out;
+}
+
+@media only screen and (max-width: 991px) {
+  .container {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .split {
+    min-height: 50%;
+  }
+  .split h1 {
+    font-size: 24px;
+  }
+  .split.hover,
+  .split.in-active {
+    -ms-flex: 12;
+    flex: 12;
+  }
+  .split.hover {
+    min-height: 90%;
+  }
+  .split.in-active {
+    min-height: 10%;
+    overflow: hidden;
+  }
+}
